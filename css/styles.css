@@ -62,7 +62,7 @@ ul { padding: 0; list-style: none; }
 }
 .nav-inner { display: flex; align-items: center; gap: 28px; height: 76px; }
 .logo { display: flex; align-items: center; gap: 10px; }
-.logo-sun { width: 44px; height: 44px; flex: none; }
+.logo-sun { width: 52px; height: 55px; flex: none; }
 .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
 .logo-text strong { font-size: 19px; font-weight: 900; color: var(--ink); }
 .logo-text small { font-size: 11px; letter-spacing: .22em; color: var(--orange); font-weight: 700; }
@@ -119,8 +119,8 @@ ul { padding: 0; list-style: none; }
   transition: transform .2s, box-shadow .2s;
 }
 .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-.feature-icon { display: block; width: 46px; height: 46px; margin-bottom: 14px; }
-.feature-icon svg { width: 100%; height: 100%; }
+.feature-icon { display: block; width: 50px; height: 50px; margin-bottom: 14px; }
+.feature-icon svg, .feature-icon img { width: 100%; height: 100%; object-fit: contain; }
 .feature-card h3 { font-size: 18px; font-weight: 900; margin-bottom: 8px; }
 .feature-card p { font-size: 14.5px; color: var(--ink-soft); }
 
@@ -134,7 +134,7 @@ section { scroll-margin-top: 84px; }
 .section-tag .ic { width: 1.2em; height: 1.2em; }
 h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
 .section-body { color: var(--ink-soft); font-size: 16px; }
-.section-head { margin-bottom: 36px; }
+.section-head { margin-bottom: 26px; }
 .section-head.center { text-align: center; }
 .section-head.split {
   display: flex; align-items: flex-end; justify-content: space-between;
@@ -142,8 +142,18 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
 }
 .inline-head { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
 
+/* 標題裝飾太陽 */
+.head-sun { flex: none; line-height: 0; }
+.head-sun-img { width: 66px; height: auto; display: block; }
+.section-head.center { position: relative; }
+.head-sun-classes {
+  position: absolute; right: 7%; top: 50%;
+  transform: translateY(-50%);
+}
+.head-sun-life .head-sun-img { width: 58px; }
+
 /* ===== 關於聖育 ===== */
-.about { padding: 48px 0 72px; }
+.about { padding: 36px 0 52px; }
 .about-inner {
   display: grid; grid-template-columns: 1fr 1.05fr;
   gap: 56px; align-items: center;
@@ -163,7 +173,7 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
 .about-photo img { border-radius: 28px; box-shadow: var(--shadow); width: 100%; }
 
 /* ===== 課程介紹 ===== */
-.classes { background: var(--cream); padding: 64px 0 72px; }
+.classes { background: var(--cream); padding: 48px 0 52px; }
 .classes .section-head h2 { margin-top: 2px; }
 .class-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .class-card {
@@ -173,11 +183,11 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
 }
 .class-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 .class-photo img { width: 100%; aspect-ratio: 175 / 79; object-fit: cover; }
-.class-body { padding: 18px 18px 20px; }
-.class-body p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 14px; min-height: 74px; }
+.class-body { padding: 16px 18px 18px; }
+.class-body p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 12px; min-height: 52px; }
 
 /* ===== 師資團隊 ===== */
-.teachers { padding: 64px 0; }
+.teachers { padding: 48px 0 52px; }
 .teacher-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .teacher-card {
   position: relative;
@@ -197,7 +207,7 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
 .card-heart { position: absolute; right: 16px; bottom: 14px; width: 18px; height: 18px; }
 
 /* ===== 校園生活 ===== */
-.life { padding: 8px 0 64px; }
+.life { padding: 8px 0 48px; }
 .life-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
 .life-grid figure { margin: 0; }
 .life-grid img {
@@ -212,7 +222,7 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
 }
 
 /* ===== 家長回饋 ===== */
-.voices { background: var(--cream); padding: 64px 0 72px; }
+.voices { background: var(--cream); padding: 48px 0 52px; }
 .voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .voice-card {
   position: relative;
@@ -227,16 +237,18 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
 .voice-card > p { font-size: 15px; color: var(--ink); margin: 14px 0 20px; }
 .voice-card footer { display: flex; align-items: center; gap: 12px; }
 .voice-card footer img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.voice-avatar { display: block; width: 48px; height: 48px; flex: none; }
+.voice-avatar svg { width: 100%; height: 100%; display: block; }
 .voice-card strong { display: block; font-size: 15px; }
 .stars { color: var(--yellow); font-size: 15px; letter-spacing: 2px; }
 
 /* ===== CTA ===== */
-.cta { padding: 24px 0 72px; }
+.cta { padding: 16px 0 52px; }
 .cta-banner {
   position: relative;
   background: var(--yellow);
   border-radius: 32px;
-  padding: 56px 40px;
+  padding: 40px 40px;
   text-align: center;
   overflow: hidden;
 }
@@ -255,10 +267,10 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
 .footer-wave { display: block; width: 100%; height: 48px; margin-top: -48px; }
 .footer-grid {
   display: grid; grid-template-columns: 1.3fr 1.1fr .8fr .9fr;
-  gap: 36px; padding-top: 40px; padding-bottom: 28px;
+  gap: 36px; padding-top: 30px; padding-bottom: 20px;
 }
-.footer-col h4 { font-size: 16px; font-weight: 900; margin-bottom: 16px; color: var(--ink); }
-.contact-list li { display: flex; align-items: center; gap: 10px; font-size: 14.5px; color: var(--ink-soft); margin-bottom: 12px; }
+.footer-col h4 { font-size: 16px; font-weight: 900; margin-bottom: 12px; color: var(--ink); }
+.contact-list li { display: flex; align-items: center; gap: 10px; font-size: 14.5px; color: var(--ink-soft); margin-bottom: 10px; }
 .contact-list .ic { width: 1.15em; height: 1.15em; flex: none; }
 .contact-list a:hover { color: var(--orange); }
 .quick-links li { margin-bottom: 10px; }
@@ -280,11 +292,24 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
   display: flex; justify-content: space-between; align-items: center;
   gap: 12px; flex-wrap: wrap;
   border-top: 1px solid #EFE3C8;
-  padding-top: 18px; padding-bottom: 22px;
+  padding-top: 14px; padding-bottom: 18px;
   font-size: 13px; color: var(--ink-soft);
 }
 .footer-legal a:hover { color: var(--orange); }
 .footer-legal span { margin: 0 6px; }
+
+/* ===== 裝飾元件（spot decorations）===== */
+.features, .about, .classes, .teachers, .life, .voices { position: relative; }
+.container { position: relative; z-index: 1; }
+.deco-layer {
+  position: absolute; inset: 0; overflow: hidden;
+  pointer-events: none; z-index: 0;
+}
+.deco { position: absolute; background-repeat: no-repeat; background-position: center; background-size: contain; }
+img.deco { height: auto; object-fit: contain; opacity: .92; }
+.deco-blob { border-radius: 50%; background: radial-gradient(circle, var(--yellow-pale), rgba(255,243,204,0) 70%); }
+.deco-blob-o { border-radius: 50%; background: radial-gradient(circle, rgba(246,106,10,.10), rgba(246,106,10,0) 70%); }
+.deco-blob-g { border-radius: 50%; background: radial-gradient(circle, rgba(111,160,34,.10), rgba(111,160,34,0) 70%); }
 
 /* ===== RWD ===== */
 @media (max-width: 1024px) {
@@ -309,7 +334,10 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
 @media (max-width: 640px) {
   .hero-inner, .about-inner { grid-template-columns: 1fr; }
   .hero h1 { font-size: 32px; }
-  .hero-blob { display: none; }
+  .hero-blob { left: -80px; bottom: -30px; top: auto; width: 180px; height: 180px; opacity: .5; }
+  .head-sun-classes { right: 2%; top: 4px; transform: none; }
+  .head-sun-classes .head-sun-img { width: 42px; }
+  .head-sun-life .head-sun-img { width: 46px; }
   .hero-copy { padding-bottom: 32px; }
   .hero-photo { margin-right: 0; }
   .hero-photo img { border-radius: 28px; }

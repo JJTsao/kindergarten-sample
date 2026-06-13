@@ -62,7 +62,7 @@ ul { padding: 0; list-style: none; }
 }
 .nav-inner { display: flex; align-items: center; gap: 28px; height: 76px; }
 .logo { display: flex; align-items: center; gap: 10px; }
-.logo-sun { width: 44px; height: 44px; flex: none; }
+.logo-sun { width: 52px; height: 55px; flex: none; }
 .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
 .logo-text strong { font-size: 19px; font-weight: 900; color: var(--ink); }
 .logo-text small { font-size: 11px; letter-spacing: .22em; color: var(--orange); font-weight: 700; }
@@ -141,6 +141,16 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
   gap: 20px; flex-wrap: wrap;
 }
 .inline-head { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+
+/* 標題裝飾太陽 */
+.head-sun { flex: none; line-height: 0; }
+.head-sun-svg { width: 64px; height: 64px; }
+.section-head.center { position: relative; }
+.head-sun-classes {
+  position: absolute; right: 8%; top: 50%;
+  transform: translateY(-50%);
+}
+.head-sun-life .head-sun-svg { width: 58px; height: 58px; }
 
 /* ===== 關於聖育 ===== */
 .about { padding: 36px 0 52px; }
@@ -310,6 +320,8 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
   .hero-inner, .about-inner { grid-template-columns: 1fr; }
   .hero h1 { font-size: 32px; }
   .hero-blob { display: none; }
+  .head-sun-classes { display: none; }
+  .head-sun-life .head-sun-svg { width: 44px; height: 44px; }
   .hero-copy { padding-bottom: 32px; }
   .hero-photo { margin-right: 0; }
   .hero-photo img { border-radius: 28px; }

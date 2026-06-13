@@ -119,8 +119,8 @@ ul { padding: 0; list-style: none; }
   transition: transform .2s, box-shadow .2s;
 }
 .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-.feature-icon { display: block; width: 46px; height: 46px; margin-bottom: 14px; }
-.feature-icon svg { width: 100%; height: 100%; }
+.feature-icon { display: block; width: 50px; height: 50px; margin-bottom: 14px; }
+.feature-icon svg, .feature-icon img { width: 100%; height: 100%; object-fit: contain; }
 .feature-card h3 { font-size: 18px; font-weight: 900; margin-bottom: 8px; }
 .feature-card p { font-size: 14.5px; color: var(--ink-soft); }
 
@@ -144,13 +144,13 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
 
 /* 標題裝飾太陽 */
 .head-sun { flex: none; line-height: 0; }
-.head-sun-svg { width: 64px; height: 64px; }
+.head-sun-img { width: 66px; height: auto; display: block; }
 .section-head.center { position: relative; }
 .head-sun-classes {
-  position: absolute; right: 8%; top: 50%;
+  position: absolute; right: 7%; top: 50%;
   transform: translateY(-50%);
 }
-.head-sun-life .head-sun-svg { width: 58px; height: 58px; }
+.head-sun-life .head-sun-img { width: 58px; }
 
 /* ===== 關於聖育 ===== */
 .about { padding: 36px 0 52px; }
@@ -304,11 +304,7 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
   pointer-events: none; z-index: 0;
 }
 .deco { position: absolute; background-repeat: no-repeat; background-position: center; background-size: contain; }
-.deco-cloud { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 56'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='34' cy='34' r='16'/%3E%3Ccircle cx='56' cy='25' r='20'/%3E%3Ccircle cx='80' cy='32' r='16'/%3E%3Ccircle cx='98' cy='37' r='11'/%3E%3Crect x='18' y='36' width='86' height='16' rx='8'/%3E%3C/g%3E%3C/svg%3E"); }
-.deco-star { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z' fill='%23FDC611'/%3E%3C/svg%3E"); }
-.deco-star-o { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z' fill='%23F4860C'/%3E%3C/svg%3E"); }
-.deco-leaf { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 4C11 4 5 8.5 5 16c0 1.6.4 3 1 4.1C7.6 14 12 10.5 17 9c-4 2.5-7.6 6-9.5 11 .8.3 1.6.5 2.5.5 7.5 0 11-7 10-16.5z' fill='%236FA022'/%3E%3C/svg%3E"); }
-.deco-dot { border-radius: 50%; background: var(--yellow); }
+img.deco { height: auto; object-fit: contain; opacity: .92; }
 .deco-blob { border-radius: 50%; background: radial-gradient(circle, var(--yellow-pale), rgba(255,243,204,0) 70%); }
 .deco-blob-o { border-radius: 50%; background: radial-gradient(circle, rgba(246,106,10,.10), rgba(246,106,10,0) 70%); }
 .deco-blob-g { border-radius: 50%; background: radial-gradient(circle, rgba(111,160,34,.10), rgba(111,160,34,0) 70%); }
@@ -338,8 +334,8 @@ h2 { font-size: 32px; font-weight: 900; color: var(--ink); }
   .hero h1 { font-size: 32px; }
   .hero-blob { left: -80px; bottom: -30px; top: auto; width: 180px; height: 180px; opacity: .5; }
   .head-sun-classes { right: 2%; top: 4px; transform: none; }
-  .head-sun-classes .head-sun-svg { width: 40px; height: 40px; }
-  .head-sun-life .head-sun-svg { width: 44px; height: 44px; }
+  .head-sun-classes .head-sun-img { width: 42px; }
+  .head-sun-life .head-sun-img { width: 46px; }
   .hero-copy { padding-bottom: 32px; }
   .hero-photo { margin-right: 0; }
   .hero-photo img { border-radius: 28px; }

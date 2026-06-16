@@ -33,7 +33,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.35; }
 p, ul { margin: 0; }
 ul { padding: 0; list-style: none; }
 
-.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+/* 版心隨螢幕變寬（地板 1200＝1280 以下維持原樣；天花板 1800＝超寬螢幕近滿版但仍留窄溝） */
+.container { max-width: clamp(1200px, 95vw, 1800px); margin: 0 auto; padding: 0 24px; }
 .ic { width: 1em; height: 1em; vertical-align: -0.12em; }
 .arrow { display: inline-block; transition: transform .2s; }
 
@@ -319,9 +320,9 @@ img.deco { height: auto; object-fit: contain; opacity: .92; }
   /* 字級：標題與內文整體放大 */
   /* h1 用流動字級：寬螢幕放大到 ~56px、接近 1025px 時收回 46px，
      確保「自信成長的第一步＋愛心」在所有桌機寬度都維持單行（不爆成三行） */
-  .hero h1 { font-size: clamp(46px, 3.9vw, 58px); }
-  .eyebrow { font-size: 17px; }
-  .lead { font-size: 18.5px; }
+  .hero h1 { font-size: clamp(46px, 3.4vw, 62px); }
+  .eyebrow { font-size: clamp(17px, 1.1vw, 19px); }
+  .lead { font-size: clamp(18.5px, 1.2vw, 21px); }
   h2 { font-size: 40px; }
   .section-tag { font-size: 16px; }
   .section-body { font-size: 17.5px; }
@@ -337,13 +338,21 @@ img.deco { height: auto; object-fit: contain; opacity: .92; }
   .about-badges li { font-size: 16px; }
   .btn { font-size: 16px; padding: 13px 28px; }
 
-  /* hero 左欄稍加寬，讓放大後的標題（含行尾愛心）在寬桌機維持兩行不爆行；
-     照片本就出血到畫面右緣，share 微調對照片幾乎無感 */
-  .hero-inner { grid-template-columns: 0.95fr 1.05fr; }
+  /* hero 左欄寬度＝貼著文字內容（max-content）：字大欄就寬、字小欄就窄，
+     中間永遠只剩固定的欄間距（40px），不會因為「欄寬固定、字級隨寬度變」而在
+     某些寬度（如 1440）欄內空出一大截。照片（1fr）吃掉剩餘、補滿右側。
+     標題與 lead 都有 <br> 控制斷行，max-content 不會把欄撐到失控。
+     align-items:start＋收小 padding-top：把 navbar 到 hero 內容的空隙壓到最小、
+     不再被垂直置中往下推（零頭高度差移到下方、緊接特色卡片，較不顯眼） */
+  .hero-inner { grid-template-columns: max-content 1fr; align-items: start; padding-top: 28px; }
 
   /* 圖片／元素份量：放大被限縮的視覺元素 */
   .feature-icon { width: 56px; height: 56px; }
   .teacher-avatar { width: 80px; height: 80px; }
+
+  /* hero 照片高度設天花板：不讓它隨寬度一直抽高，與左欄文字高度對齊、
+     消掉「導覽列到內容之間」那條會隨螢幕變大的頂部空白帶 */
+  .hero-photo img { height: clamp(520px, 34vw, 620px); object-fit: cover; }
 }
 
 @media (max-width: 1024px) {

@@ -312,6 +312,40 @@ img.deco { height: auto; object-fit: contain; opacity: .92; }
 .deco-blob-g { border-radius: 50%; background: radial-gradient(circle, rgba(111,160,34,.10), rgba(111,160,34,0) 70%); }
 
 /* ===== RWD ===== */
+/* ===== 桌機專屬：提升內容份量（≥1025px）=====
+   只在桌機加大字級／圖片，避免大畫面上內容相對縮小、留白主導的「視覺太空」。
+   平板（≤1024）與手機（≤640）沿用 base 值，不受影響。 */
+@media (min-width: 1025px) {
+  /* 字級：標題與內文整體放大 */
+  /* h1 用流動字級：寬螢幕放大到 ~56px、接近 1025px 時收回 46px，
+     確保「自信成長的第一步＋愛心」在所有桌機寬度都維持單行（不爆成三行） */
+  .hero h1 { font-size: clamp(46px, 3.9vw, 58px); }
+  .eyebrow { font-size: 17px; }
+  .lead { font-size: 18.5px; }
+  h2 { font-size: 40px; }
+  .section-tag { font-size: 16px; }
+  .section-body { font-size: 17.5px; }
+  .feature-card h3 { font-size: 20px; }
+  .feature-card p { font-size: 16px; }
+  .class-body p { font-size: 16px; }
+  .teacher-card h3 { font-size: 19px; }
+  .teacher-role { font-size: 14px; }
+  .teacher-meta { font-size: 14px; }
+  .life-grid figcaption { font-size: 15.5px; }
+  .voice-card > p { font-size: 17px; }
+  .voice-card strong { font-size: 16px; }
+  .about-badges li { font-size: 16px; }
+  .btn { font-size: 16px; padding: 13px 28px; }
+
+  /* hero 左欄稍加寬，讓放大後的標題（含行尾愛心）在寬桌機維持兩行不爆行；
+     照片本就出血到畫面右緣，share 微調對照片幾乎無感 */
+  .hero-inner { grid-template-columns: 0.95fr 1.05fr; }
+
+  /* 圖片／元素份量：放大被限縮的視覺元素 */
+  .feature-icon { width: 56px; height: 56px; }
+  .teacher-avatar { width: 80px; height: 80px; }
+}
+
 @media (max-width: 1024px) {
   .hero h1 { font-size: 38px; }
   .features-grid, .class-grid, .teacher-grid { grid-template-columns: repeat(2, 1fr); }

@@ -323,9 +323,11 @@ img.deco { height: auto; object-fit: contain; opacity: .92; }
   .hero h1 { font-size: clamp(46px, 3.4vw, 62px); }
   .eyebrow { font-size: clamp(17px, 1.1vw, 19px); }
   .lead { font-size: clamp(18.5px, 1.2vw, 21px); }
-  h2 { font-size: 40px; }
-  .section-tag { font-size: 16px; }
-  .section-body { font-size: 17.5px; }
+  /* section 標題／標籤／內文隨寬度放大：版心放寬到 1800 後，固定字級在寬螢幕上
+     相對縮小、顯空。clamp 讓它們在 ~1500px 以上跟著長大，1500 以下維持原值 */
+  h2 { font-size: clamp(40px, 2.6vw, 52px); }
+  .section-tag { font-size: clamp(17px, 1.3vw, 23px); }
+  .section-body { font-size: clamp(17.5px, 1.15vw, 21px); }
   .feature-card h3 { font-size: 20px; }
   .feature-card p { font-size: 16px; }
   .class-body p { font-size: 16px; }
@@ -353,6 +355,24 @@ img.deco { height: auto; object-fit: contain; opacity: .92; }
   /* hero 照片高度設天花板：不讓它隨寬度一直抽高，與左欄文字高度對齊、
      消掉「導覽列到內容之間」那條會隨螢幕變大的頂部空白帶 */
   .hero-photo img { height: clamp(520px, 34vw, 620px); object-fit: cover; }
+
+  /* Footer flatten：「快速連結」5 項改橫排（一行排開），不再直排把整列高度撐到 ~215；
+     並把該欄加寬讓 5 項一行放得下。footer 高度改由「聯絡我們」決定（~130）。
+     align-items:start 讓各欄貼齊頂端、不被最高欄拉成等高留白 */
+  /* 四欄平均分布跨滿版心；快速連結欄較寬以容納橫排一行。
+     收小 padding-top：縮短 footer 上緣到 logo 的留白 */
+  .footer-grid { grid-template-columns: 1fr 1.1fr 1.4fr .8fr; align-items: start; padding-top: 8px; }
+  .quick-links { display: flex; flex-wrap: wrap; gap: 12px 26px; }
+  .quick-links li { margin-bottom: 0; }
+
+  /* footer 文字放大：填實各欄內容、縮小欄與欄之間的視覺空隙（隨寬度長大、1500 以下維持原值） */
+  .footer-col h4 { font-size: clamp(16px, 1.05vw, 20px); }
+  .contact-list li { font-size: clamp(14.5px, 1.0vw, 17.5px); }
+  .quick-links a { font-size: clamp(14.5px, 1.0vw, 17.5px); }
+  .footer-bottom { font-size: clamp(13px, .8vw, 15px); }
+  .footer-brand .logo-text strong { font-size: clamp(18px, 1.25vw, 23px); }
+  .social { width: clamp(40px, 2.3vw, 46px); height: clamp(40px, 2.3vw, 46px); }
+  .social svg { width: clamp(20px, 1.15vw, 23px); height: clamp(20px, 1.15vw, 23px); }
 }
 
 @media (max-width: 1024px) {

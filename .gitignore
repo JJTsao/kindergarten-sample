@@ -1,5 +1,8 @@
 .DS_Store
 
+# 跨 agent 工具（如 Codex）的本地 skill 副本，非 Claude Code 使用、不入庫
+.agents/
+
 # 開發暫存：截圖比對與 Playwright 輸出（不入庫）
 .playwright-mcp/
 /baseline-*.png

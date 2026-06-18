@@ -1,1 +1,11 @@
 .DS_Store
+
+# 開發暫存：截圖比對與 Playwright 輸出（不入庫）
+.playwright-mcp/
+/baseline-*.png
+/before-*.png
+/pass1-*.png
+/pass2-*.png
+/measure-*.jpeg
+/fix*.jpeg
+/Unknown*.jpg
